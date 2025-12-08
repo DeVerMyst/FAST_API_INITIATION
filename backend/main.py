@@ -4,19 +4,21 @@ import uvicorn
 import os 
 import pandas as pd
 from dotenv import load_dotenv 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
 from modules.df_tools import read_db, write_db, initialize_db
-from typing import List
+from typing import List, Annotated
+
 import random
 load_dotenv()
 
 # modèles pydantic
 class QuoteRequest(BaseModel):
-    text : str
+    text : str = Field(min_length=1, description="donnez un texte pour la citation")
 
 class QuoteResponse(BaseModel):
     id : int
-    text : str    
+    text : str
 
 # creation si besoin de la base de données
 initialize_db()
