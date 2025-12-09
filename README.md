@@ -1,5 +1,5 @@
 #### Installation des bibliothèques
-`pip install fastapi uvicorn loguru streamlit requests python-dotenv`
+`pip install fastapi uvicorn loguru streamlit requests python-dotenv sqlalchemy`
 
 Un mini programme complet:
 * **frontend** (streamlit)
